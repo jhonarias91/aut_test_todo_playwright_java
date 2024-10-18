@@ -2,12 +2,14 @@ package com.jhonarias91;
 
 
 import com.jhonarias91.page.LoginPage;
+import com.jhonarias91.page.MainPage;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.assertions.LocatorAssertions;
 import com.microsoft.playwright.assertions.PlaywrightAssertions;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,6 +26,7 @@ public class TodoismTest
     private Browser browser;
     private Page page;
     private LoginPage loginPage;
+    private MainPage mainPage;
 
     @BeforeAll
     public void beforeAll(){
@@ -39,13 +42,21 @@ public class TodoismTest
         this.loginPage = new LoginPage(this.page);
         this.page.navigate("http://127.0.0.1:5000/#login");
         this.loginPage.getTestAccount();
+        page.waitForTimeout(1000);
         this.loginPage.login();
     }
 
     @Test
     public void testCreateTask(){
+        mainPage = new MainPage(this.page);
+        mainPage.createNewTask("Review PR");
 
 
+    }
+
+    @AfterAll
+    public void close(){
+        this.playwright.close();
     }
 
 }

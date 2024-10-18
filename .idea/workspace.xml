@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72bbd750-bea4-497f-95c6-0bc32ff43b8a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jhonarias91/page/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jhonarias91/page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jhonarias91/page/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +44,12 @@
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TodoismTest.testCreateTask">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.jhonarias91.page" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TodoismTest">
     <configuration name="TodoismTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="todoism_playwright" />
       <extension name="coverage">
@@ -83,8 +83,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TodoismTest.testCreateTask" />
         <item itemvalue="JUnit.TodoismTest" />
+        <item itemvalue="JUnit.TodoismTest.testCreateTask" />
       </list>
     </recent_temporary>
   </component>
