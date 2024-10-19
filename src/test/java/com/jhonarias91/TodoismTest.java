@@ -7,20 +7,18 @@ import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
-import com.microsoft.playwright.assertions.LocatorAssertions;
-import com.microsoft.playwright.assertions.PlaywrightAssertions;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
-import java.util.regex.Pattern;
-
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class TodoismTest
-{
+public class TodoismTest{
 
     private Playwright playwright;
     private Browser browser;
@@ -33,25 +31,29 @@ public class TodoismTest
         this.playwright = Playwright.create();
         this.browser = playwright.chromium()
                 .launch(new BrowserType.LaunchOptions()
-                        .setHeadless(false));
+                        .setHeadless(true));
         this.page = browser.newPage();
     }
 
     @BeforeEach
     public void setUp(){
         this.loginPage = new LoginPage(this.page);
-        this.page.navigate("http://127.0.0.1:5000/#login");
+        this.page.navigate("http://127.0.0.1:5001/#login");
         this.loginPage.getTestAccount();
         page.waitForTimeout(1000);
         this.loginPage.login();
     }
 
     @Test
+    //@RepeatedTest(10) //To verify flaky test
     public void testCreateTask(){
         mainPage = new MainPage(this.page);
-        mainPage.createNewTask("Review PR");
+        String taskName = "Review PR";
+        mainPage.createNewTask(taskName);
 
-
+        boolean newTaskAtTheEnd = mainPage.isNewTaskAtTheEnd(taskName);
+        assertTrue(newTaskAtTheEnd);
+        mainPage.logOut();
     }
 
     @AfterAll
