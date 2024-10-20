@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72bbd750-bea4-497f-95c6-0bc32ff43b8a" name="Changes" comment="Creating the task test">
-      <change afterPath="$PROJECT_DIR$/Readme.MD" afterDir="false" />
+    <list default="true" id="72bbd750-bea4-497f-95c6-0bc32ff43b8a" name="Changes" comment="New test to verify the creation of a new task,and added logout option to be ready for new test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.MD" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jhonarias91/page/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jhonarias91/page/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jhonarias91/page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jhonarias91/page/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" afterDir="false" />
     </list>
@@ -41,6 +41,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.TodoismTest.executor": "Run",
+    "JUnit.TodoismTest.testCreateAndCompleteTask.executor": "Run",
     "JUnit.TodoismTest.testCreateTask.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -54,7 +55,7 @@
       <recent name="com.jhonarias91.page" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TodoismTest.testCreateTask">
+  <component name="RunManager" selected="JUnit.TodoismTest">
     <configuration name="TodoismTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="todoism_playwright" />
       <extension name="coverage">
@@ -66,6 +67,22 @@
       <option name="PACKAGE_NAME" value="com.jhonarias91" />
       <option name="MAIN_CLASS_NAME" value="com.jhonarias91.TodoismTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoismTest.testCreateAndCompleteTask" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="todoism_playwright" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jhonarias91.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jhonarias91" />
+      <option name="MAIN_CLASS_NAME" value="com.jhonarias91.TodoismTest" />
+      <option name="METHOD_NAME" value="testCreateAndCompleteTask" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -88,8 +105,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TodoismTest.testCreateTask" />
         <item itemvalue="JUnit.TodoismTest" />
+        <item itemvalue="JUnit.TodoismTest.testCreateAndCompleteTask" />
+        <item itemvalue="JUnit.TodoismTest.testCreateTask" />
       </list>
     </recent_temporary>
   </component>
@@ -117,11 +135,31 @@
       <option name="project" value="LOCAL" />
       <updated>1729284945142</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="New test to verify the creation of a new task,and added logout option to be ready for new test">
+      <option name="closed" value="true" />
+      <created>1729378656705</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729378656705</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creating the task test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating the task test" />
+    <MESSAGE value="New test to verify the creation of a new task,and added logout option to be ready for new test" />
+    <option name="LAST_COMMIT_MESSAGE" value="New test to verify the creation of a new task,and added logout option to be ready for new test" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/jhonarias91/page/MainPage.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -8,7 +8,6 @@
 - Install maven
 - Install JDK 17
 
-
 ```bash
 mvn clean compile install
 ```

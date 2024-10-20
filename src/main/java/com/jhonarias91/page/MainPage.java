@@ -2,16 +2,20 @@ package com.jhonarias91.page;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.WaitForSelectorState;
+
+import java.util.List;
 
 public class MainPage {
 
-    private String SPAN_NAMES_SELECTOR = "//span[@class='active-item']";
+    private String SPAN_ACTIVE_TASK_SELECTOR = "//span[@class='active-item']";
+    private String SPAN_INACTIVE_TASKS_SELECTOR = "//span[@class='inactive-item']";
 
     private Locator itemInput;
     private Locator btnClear;
-
     private Locator allTaskChecks;
-    private Locator allActiveTaskNames;
+    private Locator allActiveTasks;
+    private Locator allInactiveTask;
 
     private Page page;
 
@@ -22,7 +26,8 @@ public class MainPage {
         this.itemInput = page.locator("//header/input[@id='item-input']");
         this.btnClear = page.locator("//a[@id='clear-btn']");
         this.allTaskChecks = page.locator("//div[@class='items']//i[@class='material-icons left']");
-        this.allActiveTaskNames = page.locator(SPAN_NAMES_SELECTOR);
+        this.allActiveTasks = page.locator(SPAN_ACTIVE_TASK_SELECTOR);
+        this.allInactiveTask = page.locator(SPAN_INACTIVE_TASKS_SELECTOR);
         this.logOut = page.locator("//a[@id='logout-btn' and @class='waves-effect waves-light']");
     }
 
@@ -31,14 +36,40 @@ public class MainPage {
         itemInput.press("Enter");
     }
 
-    public boolean isNewTaskAtTheEnd(String taskName) {
+    public boolean isActiveTaskAtTheEnd(String taskName) {
         // Wait for the element to be visible
         page.waitForSelector(String.format("//span[@class='active-item' and text()='%s']",taskName));
-        //Check if the last element is on the list of active task, also we can use allTaskNames.allInnerTexts()
-        return allActiveTaskNames.nth(allActiveTaskNames.count() - 1).innerText().equals(taskName);
+        int count = allActiveTasks.count();
+        if (count == 0) {
+            return false;
+        }
+        return allActiveTasks.nth(count - 1).innerText().equals(taskName);
     }
 
     public void logOut(){
         logOut.click();
+    }
+
+    public void markAsCompletedByName(String taskName){
+
+        //One way to do this is by using the following line
+        //page.locator(String.format("//span[@class='active-item' and text()='%s']/../a[@class='button done-btn']",taskName)).click();
+        //But we can also use the following line
+        Locator checkTask = page.locator(String.format("//span[@class='active-item' and text()='%s']/preceding-sibling::a[@class='button done-btn']", taskName));
+        checkTask.scrollIntoViewIfNeeded();
+        //We were getting and error here, because the element is always hide
+        //checkTask.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
+        //The a element to mark as completed is hidden, so we need to force the click
+        checkTask.click(new Locator.ClickOptions().setForce(true));
+    }
+
+    public boolean isInactiveTask(String taskName) {
+
+        Locator inactiveTask = page.locator(String.format("//span[@class='inactive-item' and text()='%s']", taskName));
+        inactiveTask.scrollIntoViewIfNeeded();
+        inactiveTask.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
+        List<String> allInactiveTasks = allInactiveTask.allInnerTexts();
+
+        return allInactiveTasks.contains(taskName);
     }
 }

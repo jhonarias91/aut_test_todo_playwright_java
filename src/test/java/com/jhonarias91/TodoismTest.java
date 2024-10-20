@@ -1,6 +1,5 @@
 package com.jhonarias91;
 
-
 import com.jhonarias91.page.LoginPage;
 import com.jhonarias91.page.MainPage;
 import com.microsoft.playwright.Browser;
@@ -8,10 +7,8 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
@@ -19,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TodoismTest{
+    private static final int PORT =5001;
 
     private Playwright playwright;
     private Browser browser;
@@ -38,7 +36,8 @@ public class TodoismTest{
     @BeforeEach
     public void setUp(){
         this.loginPage = new LoginPage(this.page);
-        this.page.navigate("http://127.0.0.1:5001/#login");
+        this.page.navigate(String.format("http://localhost:%s/#intro", PORT));
+        this.loginPage.goToLoginPage();
         this.loginPage.getTestAccount();
         page.waitForTimeout(1000);
         this.loginPage.login();
@@ -51,8 +50,24 @@ public class TodoismTest{
         String taskName = "Review PR";
         mainPage.createNewTask(taskName);
 
-        boolean newTaskAtTheEnd = mainPage.isNewTaskAtTheEnd(taskName);
+        boolean newTaskAtTheEnd = mainPage.isActiveTaskAtTheEnd(taskName);
         assertTrue(newTaskAtTheEnd);
+        mainPage.logOut();
+    }
+
+    @Test
+    public void testCreateAndCompleteTask(){
+        mainPage = new MainPage(this.page);
+        String taskName = "Update dependencies";
+        mainPage.createNewTask(taskName);
+        boolean newTaskAtTheEnd = mainPage.isActiveTaskAtTheEnd(taskName);
+        assertTrue(newTaskAtTheEnd);
+
+        mainPage.markAsCompletedByName(taskName);
+
+        boolean newTaskIsInactive = mainPage.isInactiveTask(taskName);
+        assertTrue(newTaskIsInactive);
+
         mainPage.logOut();
     }
 
@@ -60,5 +75,4 @@ public class TodoismTest{
     public void close(){
         this.playwright.close();
     }
-
 }
