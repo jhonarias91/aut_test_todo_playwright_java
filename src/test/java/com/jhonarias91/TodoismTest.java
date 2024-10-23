@@ -51,7 +51,7 @@ public class TodoismTest {
         if (ENABLE_TRACING){
             page.context().tracing().start(new Tracing.StartOptions()
                     .setScreenshots(false) // get screenshots during tracing, this is high time consuming
-                    .setSnapshots(true)   // Get dom and snaptshots
+                    .setSnapshots(false)   // Get dom and snaptshots
                     .setSources(true));
         }
     }

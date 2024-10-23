@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72bbd750-bea4-497f-95c6-0bc32ff43b8a" name="Changes" comment="change tracing from beforeAll to beforeEach">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="72bbd750-bea4-497f-95c6-0bc32ff43b8a" name="Changes" comment="remove screenShots and closing the trace on beforeEach" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -214,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729646185779</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="remove screenShots and closing the trace on beforeEach">
+      <option name="closed" value="true" />
+      <created>1729646702785</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729646702785</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -227,7 +232,8 @@
     <MESSAGE value="Enabling tracing" />
     <MESSAGE value="increase the timeout when the trace is enabled" />
     <MESSAGE value="change tracing from beforeAll to beforeEach" />
-    <option name="LAST_COMMIT_MESSAGE" value="change tracing from beforeAll to beforeEach" />
+    <MESSAGE value="remove screenShots and closing the trace on beforeEach" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove screenShots and closing the trace on beforeEach" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
