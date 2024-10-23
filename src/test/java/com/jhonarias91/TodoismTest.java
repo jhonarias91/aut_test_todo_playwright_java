@@ -31,7 +31,7 @@ public class TodoismTest {
         this.playwright = Playwright.create();
         this.browser = playwright.chromium()
                 .launch(new BrowserType.LaunchOptions()
-                        .setHeadless(false));
+                        .setHeadless(true));
         this.page = browser.newPage();
     }
 
