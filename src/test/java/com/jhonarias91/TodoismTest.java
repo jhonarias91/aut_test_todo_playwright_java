@@ -41,12 +41,6 @@ public class TodoismTest {
 
     @BeforeEach
     public void setUp() {
-        this.loginPage = new LoginPage(this.page);
-        this.page.navigate(URL);
-        this.loginPage.goToLoginPage();
-        this.loginPage.getTestAccount();
-        page.waitForTimeout(1000);
-        this.loginPage.login();
         //Enabling this for each test is lest time consuming thant doing it on the beforeAll
         if (ENABLE_TRACING){
             page.context().tracing().start(new Tracing.StartOptions()
@@ -54,6 +48,12 @@ public class TodoismTest {
                     .setSnapshots(false)   // Get dom and snaptshots
                     .setSources(true));
         }
+        this.loginPage = new LoginPage(this.page);
+        this.page.navigate(URL);
+        this.loginPage.goToLoginPage();
+        this.loginPage.getTestAccount();
+        page.waitForTimeout(1000);
+        this.loginPage.login();
     }
 
     @Test
