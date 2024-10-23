@@ -101,8 +101,4 @@ public class MainPage {
         return true;
     }
 
-    public boolean isAnyInactive(){
-
-        return allInactiveTask.count() > 0;
-    }
 }

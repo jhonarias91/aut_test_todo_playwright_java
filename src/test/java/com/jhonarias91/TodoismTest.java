@@ -20,8 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TodoismTest {
-    private static final String URL = "http://localhost:5000/#intro";
-    //private static final String URL= "https://todoism.onrender.com/#intro";
+    private static final String URL = "http://localhost:5001/#intro";
     private static final boolean ENABLE_TRACING = false;
     private Playwright playwright;
     private Browser browser;
@@ -97,7 +96,6 @@ public class TodoismTest {
         mainPage.clearAllInactiveTasks();
         boolean taskAtTheEnd = mainPage.isInactiveTaskDelete(taskName);
         assertTrue(taskAtTheEnd);
-        //boolean allInactive = mainPage.isAnyInactive();
     }
 
     @AfterEach
