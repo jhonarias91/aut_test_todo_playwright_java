@@ -34,11 +34,13 @@ public class TodoismTest {
                 .launch(new BrowserType.LaunchOptions()
                         .setHeadless(true));
         this.page = browser.newPage();
+
         if (ENABLE_TRACING){
             page.context().tracing().start(new Tracing.StartOptions()
                     .setScreenshots(true) // get screenshots during tracing
                     .setSnapshots(true)   // Get dom and snaptshots
-                    .setSources(true));   // Include source of the testing
+                    .setSources(true));
+            page.setDefaultTimeout(120000);
         }
     }
 
