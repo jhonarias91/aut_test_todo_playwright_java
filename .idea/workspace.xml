@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72bbd750-bea4-497f-95c6-0bc32ff43b8a" name="Changes" comment="New test to verify the creation of a new task,and added logout option to be ready for new test">
+    <list default="true" id="72bbd750-bea4-497f-95c6-0bc32ff43b8a" name="Changes" comment="update gitignore to add .idea/">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.MD" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jhonarias91/page/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jhonarias91/page/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jhonarias91/page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jhonarias91/page/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" afterDir="false" />
     </list>
@@ -41,6 +40,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.TodoismTest.executor": "Run",
+    "JUnit.TodoismTest.testCleanATask.executor": "Run",
     "JUnit.TodoismTest.testCreateAndCompleteTask.executor": "Run",
     "JUnit.TodoismTest.testCreateTask.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
@@ -67,6 +67,22 @@
       <option name="PACKAGE_NAME" value="com.jhonarias91" />
       <option name="MAIN_CLASS_NAME" value="com.jhonarias91.TodoismTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoismTest.testCleanATask" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="todoism_playwright" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jhonarias91.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jhonarias91" />
+      <option name="MAIN_CLASS_NAME" value="com.jhonarias91.TodoismTest" />
+      <option name="METHOD_NAME" value="testCleanATask" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -106,6 +122,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TodoismTest" />
+        <item itemvalue="JUnit.TodoismTest.testCleanATask" />
         <item itemvalue="JUnit.TodoismTest.testCreateAndCompleteTask" />
         <item itemvalue="JUnit.TodoismTest.testCreateTask" />
       </list>
@@ -143,21 +160,39 @@
       <option name="project" value="LOCAL" />
       <updated>1729378656705</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="New test to create and then mark as completed a new task, several issues with the &quot;a&quot; element to click to complete the task because this stay hide. and add button to go to the login page, because after eachtest we need to log-out">
+      <option name="closed" value="true" />
+      <created>1729399586418</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729399586418</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update gitignore to add .idea/">
+      <option name="closed" value="true" />
+      <created>1729518452515</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729518452515</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creating the task test" />
     <MESSAGE value="New test to verify the creation of a new task,and added logout option to be ready for new test" />
-    <option name="LAST_COMMIT_MESSAGE" value="New test to verify the creation of a new task,and added logout option to be ready for new test" />
+    <MESSAGE value="New test to create and then mark as completed a new task, several issues with the &quot;a&quot; element to click to complete the task because this stay hide. and add button to go to the login page, because after eachtest we need to log-out" />
+    <MESSAGE value="update gitignore to add .idea/" />
+    <option name="LAST_COMMIT_MESSAGE" value="update gitignore to add .idea/" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/jhonarias91/page/MainPage.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="6" />
+          <line>87</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

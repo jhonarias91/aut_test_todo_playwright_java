@@ -1,7 +1,7 @@
 # Aut testing for TODO app
 
-## Install
-- Clone the repository
+## Instalación
+- Clone el repositorio
 ```bash
     git clone https://github.com/jhonarias91/aut_test_todo_playwright_java.git
 ```

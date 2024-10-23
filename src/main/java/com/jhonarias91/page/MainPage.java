@@ -42,7 +42,7 @@ public class MainPage {
         int count = allActiveTasks.count();
         if (count == 0) {
             return false;
-        }
+        }//nth give us the element at the position
         return allActiveTasks.nth(count - 1).innerText().equals(taskName);
     }
 
@@ -59,7 +59,7 @@ public class MainPage {
         checkTask.scrollIntoViewIfNeeded();
         //We were getting and error here, because the element is always hide
         //checkTask.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
-        //The a element to mark as completed is hidden, so we need to force the click
+        //The a element to mark as completed is hidden, so I need to force the click
         checkTask.click(new Locator.ClickOptions().setForce(true));
     }
 
@@ -71,5 +71,38 @@ public class MainPage {
         List<String> allInactiveTasks = allInactiveTask.allInnerTexts();
 
         return allInactiveTasks.contains(taskName);
+    }
+
+    public void clearAllInactiveTasks() {
+        this.btnClear.click();
+    }
+
+    public boolean isInactiveTaskDelete(String taskName) {
+
+        Locator spanByTaskName = page.locator(String.format("//div[@class='items']//span[contains(text(),'%s')]", taskName));
+
+        //We need to wait for the element to be detached
+        spanByTaskName.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.DETACHED));
+        List<String> allInactiveTasks = spanByTaskName.allInnerTexts();
+
+        if (allInactiveTasks == null || allInactiveTasks.isEmpty()){
+            return true;
+        }else{
+            //At this point if some tasks are present and match exactly with the  taskName, those should be active
+            for (String task : allInactiveTasks){
+                if (task.equals(taskName)){
+                    //If the task is inactive and the name is perfec match, this should be active
+                    if (isInactiveTask(taskName)){
+                        return false;
+                    }
+                }
+            }
+        }//At the end if not task is found from the active tasks, then it was deleted
+        return true;
+    }
+
+    public boolean isAnyInactive(){
+
+        return allInactiveTask.count() > 0;
     }
 }
