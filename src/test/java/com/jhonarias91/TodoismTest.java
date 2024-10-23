@@ -14,6 +14,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
+import java.nio.file.Paths;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -34,14 +36,7 @@ public class TodoismTest {
                 .launch(new BrowserType.LaunchOptions()
                         .setHeadless(true));
         this.page = browser.newPage();
-
-        if (ENABLE_TRACING){
-            page.context().tracing().start(new Tracing.StartOptions()
-                    .setScreenshots(true) // get screenshots during tracing
-                    .setSnapshots(true)   // Get dom and snaptshots
-                    .setSources(true));
-            page.setDefaultTimeout(120000);
-        }
+        page.setDefaultTimeout(120000);
     }
 
     @BeforeEach
@@ -52,6 +47,13 @@ public class TodoismTest {
         this.loginPage.getTestAccount();
         page.waitForTimeout(1000);
         this.loginPage.login();
+        //Enabling this for each test is lest time consuming thant doin on the beforeall
+        if (ENABLE_TRACING){
+            page.context().tracing().start(new Tracing.StartOptions()
+                    .setScreenshots(true) // get screenshots during tracing
+                    .setSnapshots(true)   // Get dom and snaptshots
+                    .setSources(true));
+        }
     }
 
     @Test
@@ -108,6 +110,10 @@ public class TodoismTest {
 
     @AfterAll
     public void close() {
+        if (ENABLE_TRACING) {
+            page.context().tracing().stop(new Tracing.StopOptions()
+                    .setPath(Paths.get("trace.zip")));
+        }
         this.playwright.close();
     }
 }

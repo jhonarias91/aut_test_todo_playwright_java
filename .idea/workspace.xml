@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72bbd750-bea4-497f-95c6-0bc32ff43b8a" name="Changes" comment="Enabling tracing">
+    <list default="true" id="72bbd750-bea4-497f-95c6-0bc32ff43b8a" name="Changes" comment="increase the timeout when the trace is enabled">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" afterDir="false" />
     </list>
@@ -198,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729644703159</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="increase the timeout when the trace is enabled">
+      <option name="closed" value="true" />
+      <created>1729645494495</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729645494495</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -209,7 +217,8 @@
     <MESSAGE value="update the base url to localhost:5000" />
     <MESSAGE value="change headless to true" />
     <MESSAGE value="Enabling tracing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enabling tracing" />
+    <MESSAGE value="increase the timeout when the trace is enabled" />
+    <option name="LAST_COMMIT_MESSAGE" value="increase the timeout when the trace is enabled" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
