@@ -6,6 +6,7 @@ import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.Tracing;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -19,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class TodoismTest {
     private static final String URL = "http://localhost:5000/#intro";
     //private static final String URL= "https://todoism.onrender.com/#intro";
-
+    private static final boolean ENABLE_TRACING = true;
     private Playwright playwright;
     private Browser browser;
     private Page page;
@@ -33,6 +34,12 @@ public class TodoismTest {
                 .launch(new BrowserType.LaunchOptions()
                         .setHeadless(true));
         this.page = browser.newPage();
+        if (ENABLE_TRACING){
+            page.context().tracing().start(new Tracing.StartOptions()
+                    .setScreenshots(true) // get screenshots during tracing
+                    .setSnapshots(true)   // Get dom and snaptshots
+                    .setSources(true));   // Include source of the testing
+        }
     }
 
     @BeforeEach
