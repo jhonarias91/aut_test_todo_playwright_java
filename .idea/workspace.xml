@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72bbd750-bea4-497f-95c6-0bc32ff43b8a" name="Changes" comment="remove snaptshots for trace on beforeEach">
+    <list default="true" id="72bbd750-bea4-497f-95c6-0bc32ff43b8a" name="Changes" comment="move enable tracing to the beginning of the setUp to avoid issues with the context for the pages.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" afterDir="false" />
     </list>
@@ -35,19 +35,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.TodoismTest.executor": "Run",
-    "JUnit.TodoismTest.testCleanATask.executor": "Run",
-    "JUnit.TodoismTest.testCreateAndCompleteTask.executor": "Run",
-    "JUnit.TodoismTest.testCreateTask.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.TodoismTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TodoismTest.testCleanATask.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TodoismTest.testCreateAndCompleteTask.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TodoismTest.testCreateTask.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.jhonarias91.page" />
@@ -230,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729647139250</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="move enable tracing to the beginning of the setUp to avoid issues with the context for the pages.">
+      <option name="closed" value="true" />
+      <created>1729647942351</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729647942351</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -245,7 +253,8 @@
     <MESSAGE value="change tracing from beforeAll to beforeEach" />
     <MESSAGE value="remove screenShots and closing the trace on beforeEach" />
     <MESSAGE value="remove snaptshots for trace on beforeEach" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove snaptshots for trace on beforeEach" />
+    <MESSAGE value="move enable tracing to the beginning of the setUp to avoid issues with the context for the pages." />
+    <option name="LAST_COMMIT_MESSAGE" value="move enable tracing to the beginning of the setUp to avoid issues with the context for the pages." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

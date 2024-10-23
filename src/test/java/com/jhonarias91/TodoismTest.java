@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class TodoismTest {
     private static final String URL = "http://localhost:5000/#intro";
     //private static final String URL= "https://todoism.onrender.com/#intro";
-    private static final boolean ENABLE_TRACING = true;
+    private static final boolean ENABLE_TRACING = false;
     private Playwright playwright;
     private Browser browser;
     private Page page;
