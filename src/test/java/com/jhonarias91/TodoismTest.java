@@ -47,10 +47,10 @@ public class TodoismTest {
         this.loginPage.getTestAccount();
         page.waitForTimeout(1000);
         this.loginPage.login();
-        //Enabling this for each test is lest time consuming thant doin on the beforeall
+        //Enabling this for each test is lest time consuming thant doing it on the beforeAll
         if (ENABLE_TRACING){
             page.context().tracing().start(new Tracing.StartOptions()
-                    .setScreenshots(true) // get screenshots during tracing
+                    .setScreenshots(false) // get screenshots during tracing, this is high time consuming
                     .setSnapshots(true)   // Get dom and snaptshots
                     .setSources(true));
         }
@@ -79,7 +79,6 @@ public class TodoismTest {
 
         boolean newTaskIsInactive = mainPage.isInactiveTask(taskName);
         assertTrue(newTaskIsInactive);
-
     }
 
     @Test
@@ -99,21 +98,20 @@ public class TodoismTest {
         boolean taskAtTheEnd = mainPage.isInactiveTaskDelete(taskName);
         assertTrue(taskAtTheEnd);
         //boolean allInactive = mainPage.isAnyInactive();
-
     }
 
     @AfterEach
     public void logOut() {
+        if (ENABLE_TRACING) {
+            page.context().tracing().stop(new Tracing.StopOptions()
+                    .setPath(Paths.get("trace.zip")));
+        }
         //This is to be on the same page after each test
         mainPage.logOut();
     }
 
     @AfterAll
     public void close() {
-        if (ENABLE_TRACING) {
-            page.context().tracing().stop(new Tracing.StopOptions()
-                    .setPath(Paths.get("trace.zip")));
-        }
         this.playwright.close();
     }
 }
