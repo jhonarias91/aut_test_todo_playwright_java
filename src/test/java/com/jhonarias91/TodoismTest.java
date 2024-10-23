@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TodoismTest {
-    private static final String URL = "http://localhost:5001/#intro";
+    private static final String URL = "http://localhost:5000/#intro";
     private static final boolean ENABLE_TRACING = false;
     private Playwright playwright;
     private Browser browser;
