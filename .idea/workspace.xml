@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72bbd750-bea4-497f-95c6-0bc32ff43b8a" name="Changes" comment="disabled tracing">
+    <list default="true" id="72bbd750-bea4-497f-95c6-0bc32ff43b8a" name="Changes" comment="update base url">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jhonarias91/page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jhonarias91/page/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jhonarias91/TodoismTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.MD" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.MD" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +246,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729650817105</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="headless to true">
+      <option name="closed" value="true" />
+      <created>1729652380932</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1729652380932</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update base url">
+      <option name="closed" value="true" />
+      <created>1729652533788</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1729652533788</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -264,7 +279,9 @@
     <MESSAGE value="remove snaptshots for trace on beforeEach" />
     <MESSAGE value="move enable tracing to the beginning of the setUp to avoid issues with the context for the pages." />
     <MESSAGE value="disabled tracing" />
-    <option name="LAST_COMMIT_MESSAGE" value="disabled tracing" />
+    <MESSAGE value="headless to true" />
+    <MESSAGE value="update base url" />
+    <option name="LAST_COMMIT_MESSAGE" value="update base url" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
